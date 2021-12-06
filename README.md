@@ -7,23 +7,23 @@ The password can include special characters(https://owasp.org/www-community/pass
 ## Tasks completed
 
 * Was structured git hub repository with deployed result web page.
-* Was aded function to generate random password by accepted citeria.
-* Was reconstructed local start point code and files structure.
-* Was added some responsibility to css code. 
-* Was added conditional loops to protect right enters for password length 
+* Was reconstructed local start point code and files structure. 
+* Was aded functionality to web page by accepted citeria.
 
 ## Links
 
-* deployed website https://am0726github.github.io/password-challenge/
+* deployed website https://am0726github.github.io/Events-Calendar/
 
-* Code repository https://github.com/AM0726Github/password-challenge
+* Code repository https://github.com/AM0726Github/Events-Calendar
 
 ## Screenshot of Web page
 
-![Web page](./assets/images/screenshoot.JPG)
+![Web page](./assets/images-demo/05-third-party-apis-homework-demo.gif)
 
 ## References and tutorials utilized
 
-* https://stackoverflow.com/questions/9719570/generate-random-password-string-with-requirements-in-javascript/9719815
+* https://stackoverflow.com
 * https://www.w3schools.com/js
-
+* https://momentjs.com
+* https://fontawesome.com
+* https://learn.jquery.com/using-jquery-core/document-ready/
