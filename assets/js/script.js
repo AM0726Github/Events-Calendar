@@ -1,11 +1,11 @@
 $(document).ready(function(){
-   
+    var i = 0;
     var today = moment();
 
     $("#currentDay").text(today.format("dddd, Do MMMM, YYYY ")); 
 
     $(".saveBtn").on("click", function(){
-
+        i = 0;
         var plannerText = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
         localStorage.setItem(time, plannerText);
@@ -25,14 +25,13 @@ $(document).ready(function(){
     $("#17 .description").val(localStorage.getItem("17"));
     $("#18 .description").val(localStorage.getItem("18"));
     
-    var indicator = 0;
 
     function timeChange(){
         // debugger;
         var currentHour = today.hour(); 
-        
+        i++;
 
-        $("#UpdateStatus").text("Last Apdated  " + parseInt(moment().format('ss')) + " Seconds ago");
+        $("#UpdateStatus").text("Last Apdated  " + parseInt(i)  + " Seconds ago");
         
         $('.time-block').each(function(){
             var idTime = parseInt($(this).attr("id"));
@@ -48,6 +47,6 @@ $(document).ready(function(){
         })
     }
 
-    var intervalID = setInterval(timeChange,100);
+    var intervalID = setInterval(timeChange,1000);
 });
 
