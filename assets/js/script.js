@@ -1,9 +1,11 @@
 $(document).ready(function(){
+    // global variabes declaration
     var i = 0;
     var today = moment();
-
+    // Changing paragraph text by todays date
     $("#currentDay").text(today.format("dddd, Do MMMM, YYYY ")); 
-
+   
+    // Adding logics to .savebtn class battons to save data in local storage
     $(".saveBtn").on("click", function(){
         i = 0;
         var plannerText = $(this).siblings(".description").val();
@@ -12,6 +14,7 @@ $(document).ready(function(){
 
     }); 
 
+    // Loading data from lockal storage each time refreshing page
     $("#7 .description").val(localStorage.getItem("7"));
     $("#8 .description").val(localStorage.getItem("8"));
     $("#9 .description").val(localStorage.getItem("9"));
@@ -25,7 +28,7 @@ $(document).ready(function(){
     $("#17 .description").val(localStorage.getItem("17"));
     $("#18 .description").val(localStorage.getItem("18"));
     
-
+    // Adding time changeing logics to event row's  for dinamically change collors
     function timeChange(){
         // debugger;
         var currentHour = today.hour(); 
@@ -47,6 +50,7 @@ $(document).ready(function(){
         })
     }
 
+    // Calling time changing function by 1 second interval
     var intervalID = setInterval(timeChange,1000);
 });
 
