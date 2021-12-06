@@ -1,15 +1,17 @@
-var today = moment();
-
-
 $(document).ready(function(){
-    $("#currentDay").text(moment().format("dddd, MMMM Do")); 
+   
+    var today = moment();
+
+    $("#currentDay").text(today.format("dddd, Do MMMM, YYYY ")); 
+
     $(".saveBtn").on("click", function(){
+
         var plannerText = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
         localStorage.setItem(time, plannerText);
 
     }); 
-    
+
     $("#7 .description").val(localStorage.getItem("7"));
     $("#8 .description").val(localStorage.getItem("8"));
     $("#9 .description").val(localStorage.getItem("9"));
@@ -22,10 +24,15 @@ $(document).ready(function(){
     $("#16 .description").val(localStorage.getItem("16"));
     $("#17 .description").val(localStorage.getItem("17"));
     $("#18 .description").val(localStorage.getItem("18"));
-    // add more rows for more time
     
+    var indicator = 0;
+
     function timeChange(){
-        var currentHour = moment().hour(); // Number
+        // debugger;
+        var currentHour = today.hour(); 
+        
+
+        $("#UpdateStatus").text("Last Apdated  " + parseInt(moment().format('ss')) + " Seconds ago");
         
         $('.time-block').each(function(){
             var idTime = parseInt($(this).attr("id"));
@@ -40,9 +47,7 @@ $(document).ready(function(){
             }
         })
     }
-    timeChange();
-    var timeInterval = setInterval(timeChange, 1000);
 
-
+    var intervalID = setInterval(timeChange,100);
 });
 
